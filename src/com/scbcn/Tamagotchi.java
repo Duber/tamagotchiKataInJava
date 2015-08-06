@@ -5,6 +5,7 @@ package com.scbcn;
  */
 public class Tamagotchi {
     private static final int MAX_FULLNESS = 100;
+    private static final int MIN_HUNGRINESS = 0;
     private int hungriness;
     private int fullness;
 
@@ -19,7 +20,10 @@ public class Tamagotchi {
     }
 
     public void feed() {
-        hungriness--;
+        if (hungriness > MIN_HUNGRINESS) {
+            hungriness--;
+        }
+
         if (fullness < MAX_FULLNESS) {
             fullness++;
         }

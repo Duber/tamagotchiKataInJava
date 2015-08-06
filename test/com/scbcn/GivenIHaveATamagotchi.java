@@ -48,4 +48,13 @@ public class GivenIHaveATamagotchi {
         Assert.assertEquals(50, tamagotchi.getFullness());
 
     }
+
+    @Test
+    public void when_I_Feed_It_And_Is_Not_Hungry_Then_Nothing_Happens(){
+        Tamagotchi tamagotchi = new Tamagotchi(0, 100);
+
+        tamagotchi.feed();
+
+        Assert.assertEquals(0, tamagotchi.getHungriness());
+    }
 }
