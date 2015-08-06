@@ -18,4 +18,14 @@ public class GivenIHaveATamagotchiWhenIPlayWithIt {
         Assert.assertEquals(true, initialHappiness < tamagotchi.getHappiness());
     }
 
+    @Test
+    public void and_Its_Full_Happy_Then_Nothing_Happens(){
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateAFullHappinessTamagotchi();
+        int initialHappiness = tamagotchi.getHappiness();
+
+        tamagotchi.play();
+
+        Assert.assertEquals(true, initialHappiness == tamagotchi.getHappiness());
+    }
+
 }

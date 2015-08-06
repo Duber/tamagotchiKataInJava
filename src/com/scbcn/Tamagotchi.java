@@ -6,14 +6,16 @@ package com.scbcn;
 public class Tamagotchi {
     private static final int MAX_FULLNESS = 100;
     private static final int MIN_HUNGRINESS = 0;
+    public static final int MAX_HAPPINESS = 100;
     private int hungriness;
     private int fullness;
     private int happiness;
 
 
-    public Tamagotchi(int hungriness, int fullness) {
-        this.hungriness = hungriness;
-        this.fullness = fullness;
+    public Tamagotchi(int initialHungry, int initialFullness, int initialHappiness) {
+        this.hungriness = initialHungry;
+        this.fullness = initialFullness;
+        this.happiness = initialHappiness;
     }
 
     public int getHungriness() {
@@ -48,7 +50,13 @@ public class Tamagotchi {
     }
 
     public void play() {
-        happiness++;
+        if (!IsFullyHappy()) {
+            happiness++;
+        }
 
+    }
+
+    private boolean IsFullyHappy() {
+        return happiness == MAX_HAPPINESS;
     }
 }

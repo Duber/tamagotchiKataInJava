@@ -6,10 +6,23 @@ package com.scbcn;
 public class TamagotchiFactory {
 
     public static Tamagotchi CreateFullTamagotchi(){
-        return new Tamagotchi(0, 100);
+        int initialHungry = 0;
+        int initialFullness = 100;
+        int initialHappiness = 0;
+        return new Tamagotchi(initialHungry,initialFullness, initialHappiness);
     }
 
     public static Tamagotchi CreateATamagotchi(){
-        return new Tamagotchi(50, 50);
+        int initialHungry = 50;
+        int initialFullness = 50;
+        int initialHappiness = 0;
+        return new Tamagotchi(initialHungry,initialFullness, initialHappiness);
+    }
+
+    public static Tamagotchi CreateAFullHappinessTamagotchi() {
+        int initialHungry = 0;
+        int initialFullness = 0;
+        int initialHappiness = 100;
+        return new Tamagotchi(initialHungry,initialFullness,initialHappiness );
     }
 }
