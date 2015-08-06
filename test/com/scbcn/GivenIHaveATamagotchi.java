@@ -19,7 +19,7 @@ public class GivenIHaveATamagotchi {
     }
 
     @Test
-    public void when_I_Feed_It_Then_Its_Fullness_IsIncreased()
+    public void when_I_Feed_It_Then_Its_Fullness_Is_Increased()
     {
         Tamagotchi tamagotchi = new Tamagotchi(50, 50);
         int initialFullness = tamagotchi.getFullness();
@@ -27,5 +27,25 @@ public class GivenIHaveATamagotchi {
         tamagotchi.feed();
 
         Assert.assertEquals(true, initialFullness < tamagotchi.getFullness() );
+    }
+
+    @Test
+    public void when_I_Feed_It_And_Its_Full_Then_Nothing_Happens(){
+        Tamagotchi tamagotchi = new Tamagotchi(50, 100);
+
+        tamagotchi.feed();
+
+        Assert.assertEquals(100, tamagotchi.getFullness());
+    }
+
+    @Test
+    public void when_I_Ask_For_Its_Fullness_Then_Fullness_Doesnt_Change(){
+
+        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
+
+        tamagotchi.getFullness();
+
+        Assert.assertEquals(50, tamagotchi.getFullness());
+
     }
 }

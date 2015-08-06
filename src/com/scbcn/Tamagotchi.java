@@ -18,10 +18,13 @@ public class Tamagotchi {
 
     public void feed() {
         hungriness--;
+        if (fullness < 100) {
+            fullness++;
+        }
 
     }
 
     public int getFullness() {
-        return fullness++;
+        return fullness;
     }
 }
