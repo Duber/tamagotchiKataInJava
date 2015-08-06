@@ -8,6 +8,7 @@ public class Tamagotchi {
     private static final int MIN_HUNGRINESS = 0;
     private int hungriness;
     private int fullness;
+    private int happiness;
 
 
     public Tamagotchi(int hungriness, int fullness) {
@@ -40,5 +41,14 @@ public class Tamagotchi {
 
     public int getFullness() {
         return fullness;
+    }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public void play() {
+        happiness++;
+
     }
 }
