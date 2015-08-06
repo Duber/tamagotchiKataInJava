@@ -5,6 +5,7 @@ package com.scbcn;
  */
 public class Tamagotchi {
     private int hungriness;
+    private int fullness;
 
     public int getHungriness() {
         return hungriness;
@@ -13,5 +14,9 @@ public class Tamagotchi {
     public void feed() {
         hungriness--;
 
+    }
+
+    public int getFullness() {
+        return fullness++;
     }
 }

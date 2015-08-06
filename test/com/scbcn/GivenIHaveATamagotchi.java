@@ -17,4 +17,15 @@ public class GivenIHaveATamagotchi {
 
         Assert.assertEquals(true, initialHungriness > tamagotchi.getHungriness());
     }
+
+    @Test
+    public void when_I_Feed_It_Then_Its_Fullness_IsIncreased()
+    {
+        Tamagotchi tamagotchi = new Tamagotchi();
+        int initialFullness = tamagotchi.getFullness();
+
+        tamagotchi.feed();
+
+        Assert.assertEquals(true, initialFullness < tamagotchi.getFullness() );
+    }
 }
