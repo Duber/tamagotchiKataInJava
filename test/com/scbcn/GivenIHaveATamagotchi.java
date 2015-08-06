@@ -10,7 +10,7 @@ public class GivenIHaveATamagotchi {
 
     @Test
     public void when_I_Feed_It_Then_Its_Hungriness_Is_Decreased(){
-        Tamagotchi tamagotchi = new Tamagotchi();
+        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
         int initialHungriness = tamagotchi.getHungriness();
 
         tamagotchi.feed();
@@ -21,7 +21,7 @@ public class GivenIHaveATamagotchi {
     @Test
     public void when_I_Feed_It_Then_Its_Fullness_IsIncreased()
     {
-        Tamagotchi tamagotchi = new Tamagotchi();
+        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
         int initialFullness = tamagotchi.getFullness();
 
         tamagotchi.feed();

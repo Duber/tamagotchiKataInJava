@@ -7,6 +7,11 @@ public class Tamagotchi {
     private int hungriness;
     private int fullness;
 
+    public Tamagotchi(int hungriness, int fullness) {
+        this.hungriness = hungriness;
+        this.fullness = fullness;
+    }
+
     public int getHungriness() {
         return hungriness;
     }
