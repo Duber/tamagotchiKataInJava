@@ -28,4 +28,24 @@ public class GivenIHaveATamagotchiWhenIPlayWithIt {
         Assert.assertEquals(true, initialHappiness == tamagotchi.getHappiness());
     }
 
+    @Test
+    public void then_Its_Tiredness_Is_Increased(){
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateATamagotchi();
+        int initialTiredness = tamagotchi.getTiredness();
+
+        tamagotchi.play();
+
+        Assert.assertEquals(true, initialTiredness < tamagotchi.getTiredness());
+    }
+
+    @Test
+    public void and_Its_Full_Tired_Then_Nothing_Happens(){
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateAFullTiredTamagotchi();
+        int initialTiredness = tamagotchi.getTiredness();
+
+        tamagotchi.play();
+
+        Assert.assertEquals(true, initialTiredness == tamagotchi.getTiredness());
+    }
+
 }
