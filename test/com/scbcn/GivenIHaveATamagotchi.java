@@ -10,7 +10,7 @@ public class GivenIHaveATamagotchi {
 
     @Test
     public void when_I_Feed_It_Then_Its_Hungriness_Is_Decreased(){
-        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateATamagotchi();
         int initialHungriness = tamagotchi.getHungriness();
 
         tamagotchi.feed();
@@ -21,7 +21,7 @@ public class GivenIHaveATamagotchi {
     @Test
     public void when_I_Feed_It_Then_Its_Fullness_Is_Increased()
     {
-        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateATamagotchi();
         int initialFullness = tamagotchi.getFullness();
 
         tamagotchi.feed();
@@ -31,7 +31,7 @@ public class GivenIHaveATamagotchi {
 
     @Test
     public void when_I_Feed_It_And_Its_Full_Then_Nothing_Happens(){
-        Tamagotchi tamagotchi = new Tamagotchi(50, 100);
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateFullTamagotchi();
 
         tamagotchi.feed();
 
@@ -41,7 +41,7 @@ public class GivenIHaveATamagotchi {
     @Test
     public void when_I_Ask_For_Its_Fullness_Then_Fullness_Doesnt_Change(){
 
-        Tamagotchi tamagotchi = new Tamagotchi(50, 50);
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateATamagotchi();
 
         tamagotchi.getFullness();
 
@@ -51,7 +51,7 @@ public class GivenIHaveATamagotchi {
 
     @Test
     public void when_I_Feed_It_And_Is_Not_Hungry_Then_Nothing_Happens(){
-        Tamagotchi tamagotchi = new Tamagotchi(0, 100);
+        Tamagotchi tamagotchi = TamagotchiFactory.CreateFullTamagotchi();
 
         tamagotchi.feed();
 
