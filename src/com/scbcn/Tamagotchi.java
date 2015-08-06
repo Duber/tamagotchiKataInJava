@@ -20,14 +20,22 @@ public class Tamagotchi {
     }
 
     public void feed() {
-        if (hungriness > MIN_HUNGRINESS) {
+        if (IsHungry()) {
             hungriness--;
         }
 
-        if (fullness < MAX_FULLNESS) {
+        if (CanEatMore()) {
             fullness++;
         }
 
+    }
+
+    private boolean CanEatMore() {
+        return fullness < MAX_FULLNESS;
+    }
+
+    private boolean IsHungry() {
+        return hungriness > MIN_HUNGRINESS;
     }
 
     public int getFullness() {
